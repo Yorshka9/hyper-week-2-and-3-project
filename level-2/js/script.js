@@ -14,6 +14,9 @@ let reset = false;
 
 // sound variables
 let marioDie = new Audio('level-1-sounds/mario-scream.mp3');
+let ow = [
+   ""
+]
 
 
    window.onload=function() {
@@ -129,11 +132,12 @@ function getRandomDogBreedAsArray(arr) {
   // if the number of letters matches with the displayed letters
   function checkWin() {
     if (letters.length === shownLetters.length) {
+      marioDie.play();
        overlay.style.display = "";
        overlay.className = "win";
        overlayTitle.innerHTML = "Congratulations, you won!! :^)";
        buttonReset.textContent = "Play again";
-       button_level_2.style.display = '';
+       button_level_2.style.display = 'none';
        buttonBacktoMenu.className = 'btn_back_to_menu';
        reset = true;
    // if missed = 5 (lifebar depleted) display lose

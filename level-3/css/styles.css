@@ -27,12 +27,9 @@ body {
   flex-direction: column;
   display: flex;
   height: 100vh;
-  /*
   background-image: url(../images/gabe-the-dog-wallpaper_763682.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  */
-  
 }
 
 li, ol, ul {
@@ -144,16 +141,6 @@ button {
 
 .hide {
     display: none;
-}
-
-
-
-.a music-player {
-  display: inline;
-}
-
-.music-button {
-  max-width: 10%;
 }
 
 
