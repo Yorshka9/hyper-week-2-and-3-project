@@ -1,0 +1,16 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 100px, 1000px;
+    grid-template-areas: 
+    "nav"
+    "section";
+}
+
+.nav-grid {
+    grid-area: nav;
+}
+
+.section-grid {
+    grid-area: section;
+}
