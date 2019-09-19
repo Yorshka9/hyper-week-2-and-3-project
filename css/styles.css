@@ -65,10 +65,38 @@ button {
   text-align: center;
 }
 
-.section {
-  width: 100%;
-  padding: 10px;
+
+
+.card {
+  margin: 30px;
+  padding: 20px 40px 40px;
+  max-width: 400px;
+  text-align: left;
+  background: #f1f1f1;
+  border-bottom: 4px solid #ccc;
+  border-radius: 6px;
+  transition: all .5s;
+
 }
+
+.card h3, p {
+  text-align: center;
+}
+
+
+
+
+
+.card-img {
+  max-width: 100%;
+}
+
+section {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
 
 /* Title */
 
@@ -137,9 +165,7 @@ button {
     font-size: var(--font-size-medium);
 }
 
-.hide {
-    display: none;
-}
+
 
 
 /* Overlay */
@@ -155,7 +181,6 @@ button {
   left: 0;
   right: 0;
   border-radius: 5px;
-  transition: 0.5s;
   
 }
 
@@ -189,4 +214,5 @@ button {
 
 a {
   cursor: pointer;
+  text-decoration: none;
 }
