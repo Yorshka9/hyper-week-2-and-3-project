@@ -27,7 +27,6 @@ body {
   flex-direction: column;
   display: flex;
   height: 100vh;
-  background-image: url(../images/hek.jpg);
 }
 
 li, ol, ul {
@@ -166,7 +165,9 @@ section {
 }
 
 
-
+.banner {
+margin-top: 250px;
+}
 
 /* Overlay */
 
