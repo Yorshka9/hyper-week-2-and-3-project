@@ -31,11 +31,15 @@ body {
   background-color: var(--color-start);
 }
 
+nav {
+  padding-top: 60px;
+}
 
 
 ul {
   display: flex;
   font-size: 20px;
+  align-items: center;
   
 }
 
@@ -45,12 +49,21 @@ li, ul {
 }
 
 ul li {
-  padding-left: 50px;
+  padding-left: 100px;
   padding-right: 100px;
 }
 
-.light-mode {
+.music{
   margin-left: auto;
+}
+
+.music-img {
+  max-width: 40%;
+
+}
+
+a {
+  color: inherit;
 }
 
 
@@ -120,9 +133,6 @@ section {
 
 /* Title */
 
-.header {
-  color: var(--color-start);
-}
 
 /* Phrase */
 
@@ -187,7 +197,7 @@ section {
 
 
 .banner {
-margin-top: 250px;
+margin-top: 150px;
 }
 
 /* Overlay */

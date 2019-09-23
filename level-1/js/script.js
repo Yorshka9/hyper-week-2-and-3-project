@@ -134,8 +134,9 @@ function getRandomDogBreedAsArray(arr) {
        overlay.className = "win";
        overlayTitle.innerHTML = "Congratulations, you won!! :^)";
        buttonReset.textContent = "Play again";
-       button_level_2.style.display = '';
+       button_level_2.classList.remove = "hide";
        buttonBacktoMenu.className = 'btn_back_to_menu';
+       button_level_2.className = "btn_level_2";
        reset = true;
    // if missed = 5 (lifebar depleted) display lose
     } else if (missed === 5) {
@@ -144,8 +145,8 @@ function getRandomDogBreedAsArray(arr) {
        overlay.className = "lose";
        overlayTitle.innerHTML = "Oh, no! You can out of Corgi-butts, game over :^(";
        buttonReset.textContent = "Try again!";
-       button_level_2.style.display = 'none';
        buttonBacktoMenu.className = 'btn_back_to_menu';
+       overlay.style.backgroundImage = 'url(images/gabe-the-dog-sad.jpg';
        document.createElement
        reset = true;
     }
