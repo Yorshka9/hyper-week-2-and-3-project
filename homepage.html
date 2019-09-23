@@ -8,11 +8,21 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="css/styles.css">
-    </head>
-    <body class="grid-container" >
+        <link rel="stylesheet" href="css/animsition.css">
 
+    </head>
+    <body class="grid-container animsition"  >
+
+
+
+      <nav>
+        <ul>
+          <li>Back</li>
+          <li class="light-mode">Light mode</li>
+          <a onclick="togglePlay()"><li>MUSIC</li></a>
+        </ul>
+      </nav>
         
-        <a onclick="togglePlay()">MUSIC</a>
     
         <div class="main-container">
           <div id="overlay" class="start">
@@ -29,10 +39,10 @@
 
             <div class="flex-1">
 
-              <div class="card ">
+              <div class="card">
 
-                <a class="choose-level nextPage" onclick="delay ('level-1/index.html')">
-                  <img class="card-img" src="images/heck.jpg">
+                <a class="choose-level nextPage animsition-link" data-animsition-out-class="zoom-out" date-animsition-out-duration="2000"   href="level-1/index.html" onclick="delay ('level-1/index.html')">
+                  <img class="card-img " src="images/heck.jpg">
                   <h3>Level 1</h3>
                   <p>Lorem Ipsum ipsum</p>
                 </a>
@@ -41,7 +51,7 @@
 
               <div class="card ">
 
-                <a class="choose-level nextPage" onclick="delay ('level-3/index.html')">
+                <a class="choose-level nextPage animsition-link" data-animsition-out-class="zoom-out" date-animsition-out-duration="2000" onclick="delay ('level-3/index.html')">
                   <img class="card-img" src="images/heck.jpg">
                   <h3>Level 3</h3>
                   <p>Lorem Ipsum ipsum</p>
@@ -54,7 +64,7 @@
 
             <div class="card">
 
-              <a class="choose-level nextPage" onclick="delay ('level-2/index.html')">
+              <a class="choose-level nextPage animsition-link" data-animsition-out-class="zoom-out" date-animsition-out-duration="2000" onclick="delay ('level-2/index.html')">
                 <img class="card-img" src="images/heck.jpg">
                 <h3>Level 2</h3>
                 <p>Lorem Ipsum ipsum</p>
@@ -64,7 +74,7 @@
 
             <div class="card">
 
-              <a class="choose-level nextPage" onclick="delay ('level-1/index.html')">
+              <a class="choose-level nextPage animsition-link" data-animsition-out-class="zoom-out" date-animsition-out-duration="2000" onclick="delay ('level-1/index.html')">
                 <img class="card-img" src="images/heck.jpg">
                 <h3>Level 4</h3>
                 <p>Lorem Ipsum ipsum</p>
@@ -82,6 +92,8 @@
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="js/script.js"></script>   
+        <script src="js/animsition.min.js"></script>  
         <script src="js/sounds.js"></script>  
+
     </body>
 </html>

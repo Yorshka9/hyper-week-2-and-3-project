@@ -10,6 +10,7 @@ const buttonReset = document.querySelector(".btn_reset");
 const buttonBacktoMenu = document.querySelector(".btn_back_to_menu");
 const button_level_2 = document.querySelector(".btn_level_2")
 const overlayTitle = document.querySelector("h2");
+const body = document.querySelector(".body");
 let reset = false;
 
 // sound variables
@@ -171,6 +172,7 @@ function getRandomDogBreedAsArray(arr) {
    // when the player click 'start game', hide the overlay. when player wins or loses the resetGame function is called 
    buttonReset.addEventListener("click", () => {
     overlay.style.display = "none";
+    body.classList = "body-background";
     if (reset === true && missed === 5) {
        resetGame();
     } else {
@@ -179,3 +181,30 @@ function getRandomDogBreedAsArray(arr) {
     }
  });
 
+ //animsition jquery plugin settings
+
+ $(document).ready(function() {
+   $(".animsition").animsition({
+     inClass: 'zoom-in',
+     outClass: 'zoom-in-lg',
+     inDuration: 1500,
+     outDuration: 2000,
+     linkElement: '.animsition-link',
+     // e.g. linkElement: 'a:not([target="_blank"]):not([href^="#"])'
+     loading: true,
+     loadingParentElement: 'body', //animsition wrapper element
+     loadingClass: 'animsition-loading',
+     unSupportCss: [],
+     loadingInner: '', // e.g '<img src="loading.svg" />'
+     timeout: false,
+     timeoutCountdown: 5000,
+     onLoadEvent: true,
+     browser: [ 'animation-duration', '-webkit-animation-duration'],
+     // "browser" option allows you to disable the "animsition" in case the css property in the array is not supported by your browser.
+     // The default setting is to disable the "animsition" in a browser that does not support "animation-duration".
+     overlay : false,
+     overlayClass : 'animsition-overlay-slide',
+     overlayParentElement : 'body',
+     transition: function(url){ window.location.href = url; }
+   });
+ });

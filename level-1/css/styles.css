@@ -27,11 +27,13 @@ body {
   flex-direction: column;
   display: flex;
   height: 100vh;
-  /*
+
+}
+
+.body-background {
   background-image: url(../images/gabe-the-dog-wallpaper_763682.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  */
   
 }
 
