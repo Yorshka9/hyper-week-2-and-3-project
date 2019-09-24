@@ -103,7 +103,7 @@ function getRandomDogBreedAsArray(arr) {
        missed = 0;
        // reset heart default value back to lifebar.length after every game
        for (let i = 0; i < lifeBar.length; i += 1) {
-          lifeBar[i].src = "images/liveHeart.png";
+          lifeBar[i].src = "images/corgi-butt-lg.jpg";
        }
    /*  for (let i = 0; i < letters.length; i += 1) {
           letters[i].className = "letter";
@@ -146,7 +146,7 @@ function getRandomDogBreedAsArray(arr) {
        overlayTitle.innerHTML = "Oh, no! You can out of Corgi-butts, game over :^(";
        buttonReset.textContent = "Try again!";
        buttonBacktoMenu.className = 'btn_back_to_menu';
-       overlay.style.backgroundImage = 'url(images/gabe-the-dog-sad.jpg';
+       overlay.style.backgroundImage = 'url(images/shibagabesad.jpg';
        document.createElement
        reset = true;
     }
@@ -163,7 +163,7 @@ function getRandomDogBreedAsArray(arr) {
             event.target.disabled = true;
    // if the checked letter is wrong, increment the value of 'missed' (++) and replace a liveHeart.png with a lostHeart.png 
             if (letterFound === false && missed < 5) {
-              lifeBar[missed].setAttribute('src', 'images/lostHeart.png');
+              lifeBar[missed].setAttribute('src', 'images/lost-corgi-butt-lg.jpg');
               missed++;
             }
          }

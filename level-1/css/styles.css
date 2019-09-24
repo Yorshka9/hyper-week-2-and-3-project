@@ -27,14 +27,15 @@ body {
   flex-direction: column;
   display: flex;
   height: 100vh;
-  background-color: #333333;
+  background-color: #f6d4d4;
 
 }
 
 .body-background {
-  background-image: url(../images/gabe-the-dog-wallpaper_763682.jpg);
+  background-image: url(../images/shibagabe.jpg);
   background-repeat: no-repeat;
   background-size: cover;
+  background-color: #f6d4d4;
   
 }
 
@@ -43,12 +44,19 @@ li, ol, ul {
   display: inline-block;
 }
 
+ul li {
+
+    border: 1px solid #333333;
+
+}
+
 h2 {
   margin: 0;
   text-transform: uppercase;
   font-family: 'Open Sans', sans-serif;
   font-size: var(--font-size-large);
   margin: 0;
+  color: #333333;
 }
 
 button {
@@ -101,6 +109,7 @@ button {
 
 .space {
   width: 15px;
+  border: none;
 }
 
 .show {
@@ -115,6 +124,7 @@ button {
   display: flex;
   justify-content: center;
 }
+
 
 .chosen {
   background: var(--color-neutral);
@@ -177,7 +187,7 @@ button {
   right: 0;
   border-radius: 5px;
   transition: 0.5s;
-  background-image: url(../images/gabe-the-dog-wallpaper_763682.jpg);
+  background-image: url(../images/shibagabe.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   
@@ -186,7 +196,7 @@ button {
 
 
 .title {
-  color: #FFF;
+  color: #333333;
 }
 
 .start {
@@ -215,5 +225,9 @@ button {
 
 a {
   cursor: pointer;
+}
+
+#qwerty button {
+  border: 2px solid #333333;
 }
 
