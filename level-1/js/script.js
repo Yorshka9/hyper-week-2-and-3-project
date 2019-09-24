@@ -5,19 +5,41 @@ const shownLetters = document.getElementsByClassName("show");
 const overlay = document.getElementById("overlay");
 const ul = document.getElementsByTagName("ul")[0];
 const buttons = document.getElementsByTagName("button");
-const lifeBar = document.getElementsByTagName("img");
+const lifeBar = document.getElementsByClassName("lifebar");
 const buttonReset = document.querySelector(".btn_reset");
 const buttonBacktoMenu = document.querySelector(".btn_back_to_menu");
 const button_level_2 = document.querySelector(".btn_level_2")
 const overlayTitle = document.querySelector("h2");
 const body = document.querySelector(".body");
+const p = document.querySelector(".overlay-p");
 let reset = false;
 
 // sound variables
 let marioDie = new Audio('level-1-sounds/mario-scream.mp3');
+let gabeAudio = document.getElementById("gabeAudio");
+let isPlaying = false;
+
+// sound functions
+
+function togglePlay(){
+   if (isPlaying) {
+       gabeAudio.pause()
+   }   else {
+       gabeAudio.play();
+   }
+};
+
+gabeAudio.onplaying = function() {
+   isPlaying = true;
+};
+gabeAudio.onpause = function() {
+   isPlaying = false;
+};
+
+// sound functions end
 
 
-   window.onload=function() {
+   window.onload = function() {
       document.getElementById("gabeAudio").play();
    }
 
@@ -133,24 +155,45 @@ function getRandomDogBreedAsArray(arr) {
        overlay.style.display = "";
        overlay.className = "win";
        overlayTitle.innerHTML = "Congratulations, you won!! :^)";
-       buttonReset.textContent = "Play again";
+       buttonReset.textContent = "PLAY AGAIN";
        button_level_2.classList.remove = "hide";
-       buttonBacktoMenu.className = 'btn_back_to_menu';
        button_level_2.className = "btn_level_2";
+       p.classList.remove = "hide";
+       p.className = "overlay-p";
+       overlay.style.backgroundImage = 'url(images/shibagabehappy.jpg';
        reset = true;
    // if missed = 5 (lifebar depleted) display lose
     } else if (missed === 5) {
-       marioDie.play();
        overlay.style.display = "";
        overlay.className = "lose";
        overlayTitle.innerHTML = "Oh, no! You can out of Corgi-butts, game over :^(";
-       buttonReset.textContent = "Try again!";
-       buttonBacktoMenu.className = 'btn_back_to_menu';
+       buttonReset.textContent = "TRY AGAIN";
+       button_level_2.classList.remove = "hide";
+       button_level_2.className = "btn_level_2";
+       p.classList.remove = "hide";
+       p.className = "overlay-p";
        overlay.style.backgroundImage = 'url(images/shibagabesad.jpg';
-       document.createElement
        reset = true;
+    } if (missed === 5 && isPlaying === true) {
+      marioDie.play();
+      
     }
  }
+
+ // dumb function for changing the background image of the body whenever the player loses 1 life
+   function lifeBarImage() {
+      if (missed === 1) {
+         body.style.backgroundImage = 'url(images/shibagabe4.jpg)';
+      } else if (missed === 2) {
+         body.style.backgroundImage = 'url(images/shibagabe3.jpg)';
+      } else if (missed === 3) {
+         body.style.backgroundImage = 'url(images/shibagabe2.jpg)';
+      } else if (missed === 4) {
+         body.style.backgroundImage = 'url(images/shibagabe1.jpg)';
+      }
+   }
+
+
 
 
  
@@ -167,12 +210,14 @@ function getRandomDogBreedAsArray(arr) {
               missed++;
             }
          }
+         lifeBarImage();
          checkWin();
       });
 
    // when the player click 'start game', hide the overlay. when player wins or loses the resetGame function is called 
    buttonReset.addEventListener("click", () => {
     overlay.style.display = "none";
+    body.style.backgroundImage = "url(images/shibagabe.jpg)";
     body.classList = "body-background";
     if (reset === true && missed === 5) {
        resetGame();

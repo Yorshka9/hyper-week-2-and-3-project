@@ -1,7 +1,12 @@
-/* Main styles */
+/* main styles */
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&Roboto:300');
 
-/* Variables */
+
+* {
+  box-sizing: border-box;
+}
+
+/* variables */
 
 :root {
   --color-win: #78CF82;
@@ -28,8 +33,13 @@ body {
   flex-direction: column;
   display: flex;
   height: 100vh;
-  background-color: var(--color-start);
+  margin: 0;
+  background-color: #c2e9fb;
+
 }
+
+
+/* nav */
 
 nav {
   padding-top: 60px;
@@ -48,24 +58,37 @@ li, ul {
   list-style: none;
 }
 
-ul li {
-  padding-left: 100px;
-  padding-right: 100px;
+
+.btn_back_to_menu {
+  padding: 8px;
+  margin-right: auto;
+  background: #FFFFFF;
+  border-radius: 5px;
+  font-size: var(--font-size-medium);
+  background: #333333;
+  margin-left: 50px;
+  margin-top: 30px;
 }
+
+
+
 
 .music{
   margin-left: auto;
+  margin-right: 50px;
+  margin-top: 30px;
 }
+
 
 .music-img {
   max-width: 40%;
-
 }
 
 a {
-  color: inherit;
+  color: #ffffff;
 }
 
+/* nav end */
 
 
 h2 {
@@ -74,6 +97,7 @@ h2 {
   font-family: 'Open Sans', sans-serif;
   font-size: var(--font-size-large);
   margin: 0;
+  color: #333333;
 }
 
 button {
@@ -96,16 +120,21 @@ button {
   height: 100%;
   max-height: 900px;
   text-align: center;
+  
 }
 
 
 
 .card {
   margin: 30px;
-  padding: 20px 40px 40px;
+  padding-bottom: 20px;
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-right: 10px;
+  margin-top: 50px;
   max-width: 500px;
   text-align: left;
-  background: #f1f1f1;
+  background: #E3E3E3;
   border-bottom: 4px solid #ccc;
   border-radius: 6px;
   transition: all .5s;
@@ -114,6 +143,7 @@ button {
 
 .card h3, p {
   text-align: center;
+  color: #333333;
 }
 
 
@@ -128,6 +158,7 @@ section {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+
 }
 
 
@@ -174,7 +205,7 @@ section {
 .btn_reset {
   padding: 8px;
   margin: 50px auto;
-  background: #FFFFFF;
+  background: #333333;
   border-radius: 5px;
   font-size: var(--font-size-medium);
 }
@@ -187,20 +218,13 @@ section {
     font-size: var(--font-size-medium);
   }
 
-.btn_back_to_menu {
-    padding: 8px;
-    margin: 50px auto;
-    background: #FFFFFF;
-    border-radius: 5px;
-    font-size: var(--font-size-medium);
-}
 
 
 .banner {
 margin-top: 150px;
 }
 
-/* Overlay */
+/* overlay */
 
 #overlay {
   display: flex;
@@ -213,11 +237,12 @@ margin-top: 150px;
   left: 0;
   right: 0;
   border-radius: 5px;
-  
+  background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+
 }
 
 .title {
-  color: #FFF;
+  color: #333333;
 }
 
 .start {
@@ -225,7 +250,7 @@ margin-top: 150px;
 }
 
 .start a {
-  color: var(--color-win);
+  color: #FFFFFF;
 }
 
 .win {

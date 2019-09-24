@@ -13,18 +13,20 @@
 
     <audio id="gabeAudio" src="level-1-sounds/gabe-queen.mp3" preload="auto"></audio>
 
-    
-    <a onclick="togglePlay()">MUSIC</a>
+    <a class="btn_back_to_menu back" href="../homepage.html"><li>Back</li></a>
+    <a class="music-player" onclick="togglePlay()"><img class="music-img" src="images/music-player.png"></a>
 
     <div class="main-container">
       <div id="overlay" class="start">
         
+        <a class="btn_back_to_menu back" href="../homepage.html"><li>Back</li></a>
+        <a class="music-player" onclick="togglePlay()"><img class="music-img" src="images/music-player.png"></a>
         <h2 class="title">Dogame</h2>
 
-          <a class="btn_reset">Start Game</a>
-          <a class="btn_back_to_menu hide" href="../homepage.html">Back to main menu</a>
-          <a href="../level-2/index.html" class="btn_level_2 hide">Next level</a>
-          <a onclick="togglePlay()">MUSIC</a>
+          <a class="btn_reset">START</a>
+          <p class="overlay-p hide">OR</p>
+          <a href="../level-2/index.html" class="btn_level_2 hide">NEXT LEVEL</a>
+
 
 
 
@@ -55,11 +57,11 @@
 
       <div id="scoreboard" class="section">
         <ol>
-          <li class="tries"><img src="images/corgi-butt-lg.jpg" height="120px" width="115px"></li>
-          <li class="tries"><img src="images/corgi-butt-lg.jpg" height="120px" width="115px"></li>
-          <li class="tries"><img src="images/corgi-butt-lg.jpg" height="120px" width="115px"></li>
-          <li class="tries"><img src="images/corgi-butt-lg.jpg" height="120px" width="115px"></li>
-          <li class="tries"><img src="images/corgi-butt-lg.jpg" height="120px" width="115px"></li>
+          <li class="tries"><img class="lifebar" src="images/corgi-butt-lg.jpg" height="120px" width="115px"></li>
+          <li class="tries"><img class="lifebar" src="images/corgi-butt-lg.jpg" height="120px" width="115px"></li>
+          <li class="tries"><img class="lifebar" src="images/corgi-butt-lg.jpg" height="120px" width="115px"></li>
+          <li class="tries"><img class="lifebar" src="images/corgi-butt-lg.jpg" height="120px" width="115px"></li>
+          <li class="tries"><img class="lifebar" src="images/corgi-butt-lg.jpg" height="120px" width="115px"></li>
           
         </ol>
       </div>
