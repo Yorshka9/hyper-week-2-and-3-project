@@ -5,30 +5,41 @@
     <title>Dogame</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/styles.css" rel="stylesheet">
+    <link href="css/animsition.css" rel="stylesheet">
   </head>
-  <body>
+  <body class="animsition body">
+
 
 
     <audio id="gabeAudio" src="level-1-sounds/gabe-queen.mp3" preload="auto"></audio>
-    <a onclick="togglePlay()">MUSIC</a>
+
+    <a class="btn_back_to_menu back" href="../homepage.html"><li>Back</li></a>
 
     <div class="main-container">
       <div id="overlay" class="start">
-        <h2 class="title">Dogame</h2>
-        <a class="btn_reset">Start Game</a>
-        <a class="btn_back_to_menu hide" onclick="window.location.reload();">Back to menu</a>
-        <a href="level-2.html" class="btn_level_2">Level 2</a>
-        <a onclick="togglePlay()">MUSIC</a>
+        
+        <a class="btn_back_to_menu back" href="../homepage.html"><li>Back</li></a>
+        <h2 class="title">Pizza</h2>
+
+          <a class="btn_reset">START</a>
+          <p class="overlay-p hide">OR</p>
+          <a href="../level-3/index.html" class="btn_level_2 hide">NEXT LEVEL</a>
+
+
+
+
+
 
       </div>
 
       <div id="banner" class="section">
-        <h2 class="header">Dogame</h2>
-        <h3 class="header">Guess the breed!</h3>
+        <h2 class="header">Pizza</h2>
+        <h3 class="header">Guess the pizza type!</h3>
       </div>
 
+      
       <div id="phrase" class="section">
-        <ul></ul>
+        <ul class="phrase-ul"></ul>
       </div>
       <div id="qwerty" class="section">
         <div class="keyrow">
@@ -44,11 +55,10 @@
 
       <div id="scoreboard" class="section">
         <ol>
-          <li class="tries"><img src="images/liveHeart.png" height="35px" width="30px"></li>
-          <li class="tries"><img src="images/liveHeart.png" height="35px" width="30px"></li>
-          <li class="tries"><img src="images/liveHeart.png" height="35px" width="30px"></li>
-          <li class="tries"><img src="images/liveHeart.png" height="35px" width="30px"></li>
-          <li class="tries"><img src="images/liveHeart.png" height="35px" width="30px"></li>
+          <li class="tries"><img class="lifebar" src="images/pizza.jpg" height="120px" width="115px"></li>
+          <li class="tries"><img class="lifebar" src="images/pizza.jpg" height="120px" width="115px"></li>
+          <li class="tries"><img class="lifebar" src="images/pizza.jpg" height="120px" width="115px"></li>
+
           
         </ol>
       </div>
@@ -58,5 +68,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="js/script.js"></script>   
     <script src="js/sounds.js"></script>   
+    <script src="js/animsition.min.js"></script>   
   </body>
 </html>

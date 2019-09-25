@@ -5,21 +5,41 @@ const shownLetters = document.getElementsByClassName("show");
 const overlay = document.getElementById("overlay");
 const ul = document.getElementsByTagName("ul")[0];
 const buttons = document.getElementsByTagName("button");
-const lifeBar = document.getElementsByTagName("img");
+const lifeBar = document.getElementsByClassName("lifebar");
 const buttonReset = document.querySelector(".btn_reset");
 const buttonBacktoMenu = document.querySelector(".btn_back_to_menu");
 const button_level_2 = document.querySelector(".btn_level_2")
 const overlayTitle = document.querySelector("h2");
+const body = document.querySelector(".body");
+const p = document.querySelector(".overlay-p");
 let reset = false;
 
 // sound variables
 let marioDie = new Audio('level-1-sounds/mario-scream.mp3');
-let ow = [
-   ""
-]
+let gabeAudio = document.getElementById("gabeAudio");
+let isPlaying = false;
+
+// sound functions
+
+function togglePlay(){
+   if (isPlaying) {
+       gabeAudio.pause()
+   }   else {
+       gabeAudio.play();
+   }
+};
+
+gabeAudio.onplaying = function() {
+   isPlaying = true;
+};
+gabeAudio.onpause = function() {
+   isPlaying = false;
+};
+
+// sound functions end
 
 
-   window.onload=function() {
+   window.onload = function() {
       document.getElementById("gabeAudio").play();
    }
 
@@ -44,21 +64,21 @@ let ow = [
   }
 
 const dogBreeds = [
-    "Labrador Retriever",
-    "Pug",
-    "Siberian Husky",
-    "French Bulldog",
-    "Pumi",
-    "Beagle",
-    "Pomeranian",
-    "Poodle",
-    "Chihuahua",
-    "Boxer",
-    "German Sheperd",
-    "Pitbull",
-    "Shiba Inu",
-    "Dobermann",
-    "Border Collie"];
+    "Margherita",
+    "Marinara",
+    "Quattro Stagioni",
+    "Carbonara",
+    "Frutti di Mare",
+    "Quattro Formaggi",
+    "Napoletana",
+    "Pugliese",
+    "Montanara",
+    "Emiliana",
+    "Romana",
+    "Fattoria",
+    "Prosciutto",
+    "Americana",
+    "Gorgonzola"];
 
 // get a random breed and split that phrase into array of letters
 function getRandomDogBreedAsArray(arr) {
@@ -105,7 +125,7 @@ function getRandomDogBreedAsArray(arr) {
        missed = 0;
        // reset heart default value back to lifebar.length after every game
        for (let i = 0; i < lifeBar.length; i += 1) {
-          lifeBar[i].src = "images/liveHeart.png";
+          lifeBar[i].src = "images/pizza.jpg";
        }
    /*  for (let i = 0; i < letters.length; i += 1) {
           letters[i].className = "letter";
@@ -132,27 +152,35 @@ function getRandomDogBreedAsArray(arr) {
   // if the number of letters matches with the displayed letters
   function checkWin() {
     if (letters.length === shownLetters.length) {
-      marioDie.play();
        overlay.style.display = "";
        overlay.className = "win";
        overlayTitle.innerHTML = "Congratulations, you won!! :^)";
-       buttonReset.textContent = "Play again";
-       button_level_2.style.display = 'none';
-       buttonBacktoMenu.className = 'btn_back_to_menu';
+       overlayTitle.style.fontSize = "40px";
+       buttonReset.textContent = "PLAY AGAIN";
+       button_level_2.classList.remove = "hide";
+       button_level_2.className = "btn_level_2";
+       p.classList.remove = "hide";
+       p.className = "overlay-p";
+       overlay.style.backgroundImage = 'url(images/pizza-background.jpg';
        reset = true;
    // if missed = 5 (lifebar depleted) display lose
-    } else if (missed === 5) {
-       marioDie.play();
+    } else if (missed === 3) {
        overlay.style.display = "";
        overlay.className = "lose";
-       overlayTitle.innerHTML = "Oh, no! You can out of Corgi-butts, game over :^(";
-       buttonReset.textContent = "Try again!";
-       button_level_2.style.display = 'none';
-       buttonBacktoMenu.className = 'btn_back_to_menu';
-       document.createElement
+       overlayTitle.innerHTML = "Oh, no! You can out of tries, game over :^(";
+       overlayTitle.style.fontSize = "40px";
+       buttonReset.textContent = "TRY AGAIN";
+       button_level_2.classList.remove = "hide";
+       button_level_2.className = "btn_level_2";
+       p.classList.remove = "hide";
+       p.className = "overlay-p";
+       overlay.style.backgroundImage = 'url(images/pizza-background.jpg';
        reset = true;
-    }
+    } 
  }
+
+
+
 
 
  
@@ -164,8 +192,8 @@ function getRandomDogBreedAsArray(arr) {
             event.target.className = "chosen";
             event.target.disabled = true;
    // if the checked letter is wrong, increment the value of 'missed' (++) and replace a liveHeart.png with a lostHeart.png 
-            if (letterFound === false && missed < 5) {
-              lifeBar[missed].setAttribute('src', 'images/lostHeart.png');
+            if (letterFound === false && missed < 3) {
+              lifeBar[missed].setAttribute('src', 'images/lost-pizza.jpg');
               missed++;
             }
          }
@@ -175,7 +203,9 @@ function getRandomDogBreedAsArray(arr) {
    // when the player click 'start game', hide the overlay. when player wins or loses the resetGame function is called 
    buttonReset.addEventListener("click", () => {
     overlay.style.display = "none";
-    if (reset === true && missed === 5) {
+    body.style.backgroundImage = "url(images/pizza-background.jpg)";
+    body.classList = "body-background";
+    if (reset === true && missed === 3) {
        resetGame();
     } else {
        resetGame();
@@ -183,3 +213,30 @@ function getRandomDogBreedAsArray(arr) {
     }
  });
 
+ //animsition jquery plugin settings
+
+ $(document).ready(function() {
+   $(".animsition").animsition({
+     inClass: 'zoom-in',
+     outClass: 'zoom-in-lg',
+     inDuration: 1500,
+     outDuration: 2000,
+     linkElement: '.animsition-link',
+     // e.g. linkElement: 'a:not([target="_blank"]):not([href^="#"])'
+     loading: true,
+     loadingParentElement: 'body', //animsition wrapper element
+     loadingClass: 'animsition-loading',
+     unSupportCss: [],
+     loadingInner: '', // e.g '<img src="loading.svg" />'
+     timeout: false,
+     timeoutCountdown: 5000,
+     onLoadEvent: true,
+     browser: [ 'animation-duration', '-webkit-animation-duration'],
+     // "browser" option allows you to disable the "animsition" in case the css property in the array is not supported by your browser.
+     // The default setting is to disable the "animsition" in a browser that does not support "animation-duration".
+     overlay : false,
+     overlayClass : 'animsition-overlay-slide',
+     overlayParentElement : 'body',
+     transition: function(url){ window.location.href = url; }
+   });
+ });
