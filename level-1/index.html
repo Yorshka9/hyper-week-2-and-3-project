@@ -14,13 +14,13 @@
     <audio id="gabeAudio" src="level-1-sounds/gabe-queen.mp3" preload="auto"></audio>
 
     <a class="btn_back_to_menu back" href="../homepage.html"><li>Back</li></a>
-    <a class="music-player" onclick="togglePlay()"><img class="music-img" src="images/music-player.png"></a>
+    <a class="music-player" onclick="togglePlay(), changeBodyPlayer();"><img id="body-music-muted" class="music-img image-changer" src="images/music-player-muted.png"></a>
 
     <div class="main-container">
       <div id="overlay" class="start">
         
         <a class="btn_back_to_menu back" href="../homepage.html"><li>Back</li></a>
-        <a class="music-player" onclick="togglePlay()"><img class="music-img" src="images/music-player.png"></a>
+        <a class="music-player" onclick="togglePlay(), changeOverlayPlayer();"><img  id="overlay-music-muted" class="music-img image-changer" src="images/music-player-muted.png"></a>
         <h2 class="title">Dogame</h2>
 
           <a class="btn_reset">START</a>

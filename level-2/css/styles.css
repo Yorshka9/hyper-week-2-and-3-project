@@ -35,8 +35,8 @@ body {
 .body-background {
   background-image: url(../images/pizza-background.jpg);
   background-repeat: no-repeat;
-  background-size: cover;
-  background-color: #f6d4d4;
+  background-size: contain;
+  background-color: #bcdbf1;
   
 }
 
@@ -214,8 +214,9 @@ button {
   transition: 0.5s;
   background-image: url(../images/pizza-background.jpg);
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
   background-position: center;
+  background-color: #bcdbf1;
   
 }
 
@@ -249,9 +250,6 @@ button {
   color: var(--color-white);
 }
 
-.lose {
-  background-color: var(--color-lose);
-}
 
 
 

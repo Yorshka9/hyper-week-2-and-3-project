@@ -12,29 +12,61 @@ const button_level_2 = document.querySelector(".btn_level_2")
 const overlayTitle = document.querySelector("h2");
 const body = document.querySelector(".body");
 const p = document.querySelector(".overlay-p");
+
 let reset = false;
+
 
 // sound variables
 let marioDie = new Audio('level-1-sounds/mario-scream.mp3');
 let gabeAudio = document.getElementById("gabeAudio");
+let musicImage = document.querySelector(".music-img");
 let isPlaying = false;
+let overlayImage = document.getElementById("overlay-music");
+let bodyImage = document.getElementById("body-music");
 
 // sound functions
 
-function togglePlay(){
-   if (isPlaying) {
-       gabeAudio.pause()
-   }   else {
-       gabeAudio.play();
-   }
-};
 
-gabeAudio.onplaying = function() {
-   isPlaying = true;
-};
-gabeAudio.onpause = function() {
-   isPlaying = false;
-};
+   // functions for toggling the on/off variations of the music player when the user clicks on the image
+   function changeOverlayPlayer() {
+      var img = document.getElementById('overlay-music-muted').src;
+      if (img.indexOf('music-player-muted.png')!=-1) {
+         document.getElementById('overlay-music-muted').src  = 'images/music-player.png';
+      }
+      else {
+         document.getElementById('overlay-music-muted').src = 'images/music-player-muted.png';
+   }
+
+   }
+
+   // functions for toggling the on/off variations of the music player when the user clicks on the image
+   function changeBodyPlayer() {
+      var img = document.getElementById('body-music-muted').src;
+      if (img.indexOf('music-player-muted.png')!=-1) {
+         document.getElementById('body-music-muted').src  = 'images/music-player.png';
+      }
+      else {
+         document.getElementById('body-music-muted').src = 'images/music-player-muted.png';
+   }
+
+   }
+
+
+   function togglePlay(){
+      if (isPlaying) {
+
+         gabeAudio.pause()
+      }   else {
+         gabeAudio.play();
+      }
+   };
+
+   gabeAudio.onplaying = function() {
+      isPlaying = true;
+   };
+   gabeAudio.onpause = function() {
+      isPlaying = false;
+   };
 
 // sound functions end
 
