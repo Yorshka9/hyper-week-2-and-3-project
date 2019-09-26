@@ -165,6 +165,12 @@ button {
     color: #ffffff;
 }
 
+.btn_reset:hover, .btn_level_2:hover, .btn_back_to_menu:hover {
+  background-color: #1f1f1f;
+  color: #ffffff;
+}
+
+
 .overlay-p {
   display: inherit;
   align-self: center;
