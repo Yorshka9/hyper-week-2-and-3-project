@@ -150,10 +150,15 @@ button {
   padding: 8px;
   margin: 50px auto;
   background: #333333;
-  color: #FFFFFF;
+  color: rgb(238, 238, 238);
   border-radius: 5px;
   font-size: var(--font-size-medium);
   text-decoration: none;
+}
+
+.btn_reset:hover, .btn_level_2:hover, .btn_back_to_menu:hover {
+  background-color: #1f1f1f;
+  color: #ffffff;
 }
 
 
@@ -165,7 +170,7 @@ button {
     border-radius: 5px;
     font-size: var(--font-size-medium);
     text-decoration: none;
-    color: #ffffff;
+    color: rgb(238, 238, 238);
 }
 
 .overlay-p {

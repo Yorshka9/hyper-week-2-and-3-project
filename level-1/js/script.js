@@ -12,7 +12,6 @@ const button_level_2 = document.querySelector(".btn_level_2")
 const overlayTitle = document.querySelector("h2");
 const body = document.querySelector(".body");
 const p = document.querySelector(".overlay-p");
-
 let reset = false;
 
 
@@ -68,7 +67,7 @@ let bodyImage = document.getElementById("body-music");
       isPlaying = false;
    };
 
-// sound functions end
+
 
 
    window.onload = function() {
@@ -94,6 +93,8 @@ let bodyImage = document.getElementById("body-music");
           soundFile.play();
       }, 1);
   }
+
+  // sound functions end
 
 const dogBreeds = [
     "Labrador Retriever",
@@ -157,7 +158,7 @@ function getRandomDogBreedAsArray(arr) {
        missed = 0;
        // reset heart default value back to lifebar.length after every game
        for (let i = 0; i < lifeBar.length; i += 1) {
-          lifeBar[i].src = "images/corgi-butt-lg.jpg";
+          lifeBar[i].src = "images/corgi-butt-transparent-lg.png";
        }
    /*  for (let i = 0; i < letters.length; i += 1) {
           letters[i].className = "letter";
@@ -238,7 +239,7 @@ function getRandomDogBreedAsArray(arr) {
             event.target.disabled = true;
    // if the checked letter is wrong, increment the value of 'missed' (++) and replace a liveHeart.png with a lostHeart.png 
             if (letterFound === false && missed < 5) {
-              lifeBar[missed].setAttribute('src', 'images/lost-corgi-butt-lg.jpg');
+              lifeBar[missed].setAttribute('src', 'images/lost-corgi-butt-transparent-lg.png');
               missed++;
             }
          }

@@ -8,6 +8,18 @@ let reset = false;
 
 
 
+    // functions for toggling the on/off variations of the music player when the user clicks on the image
+   function changeBodyPlayer() {
+    var img = document.getElementById('body-music-muted').src;
+    if (img.indexOf('music-player-muted.png')!=-1) {
+       document.getElementById('body-music-muted').src  = 'images/music-player.png';
+    }
+    else {
+       document.getElementById('body-music-muted').src = 'images/music-player-muted.png';
+ }
+
+ }
+
     // when player clicks on 'start game' hide the overlay 
     buttonReset.addEventListener("click", () => {
         overlay.style.display = "none";
